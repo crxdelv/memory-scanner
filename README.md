@@ -24,7 +24,7 @@ console.log(scanner.memory)
 # Installation
 
 ```html
-<script src="https://crestatic.vercel.app/creuserr/memory-scanner/memory-scanner.javascript"></script>
+<script src="https://crestatic.vercel.app/creuserr/memory-scanner/memory-scanner.js"></script>
 ```
 
 # Documentation
