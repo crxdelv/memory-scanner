@@ -47,6 +47,8 @@ console.log(scanner.memory)
 }
 ```
 
+**CAUTION:** Do not modify the `memory` directly, please only use `push` or `patch` to prevent scanning error.
+
 ## Pushing an address
 
 To add an address, you need to call `push`.
