@@ -290,4 +290,4 @@ scanner.filter_rule("even");
 ## Manual blocking
 If you want to manually block filtered addresses, you can call `block_filtered`.
 
-This method will search for filtered out addresses and add them to the blacklist..
+This method will search for filtered out addresses and add them to the blacklist.
