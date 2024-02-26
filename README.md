@@ -39,10 +39,11 @@ console.log(scanner.memory)
     aft: Number
   }],
   version: Number,
-  blocked: Array<String>,
+  blocked: Array<Number>,
   rules: Object<Function>,
   should_override: Boolean(true),
-  should_block: Boolean(true)
+  should_block: Boolean(true),
+  _backup: Array<Number>
 }
 ```
 
