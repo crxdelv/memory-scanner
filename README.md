@@ -256,12 +256,12 @@ It is determined by the formula `256 ** byte < a`, where *a* is the latest value
 
 ```javascript
 scanner.push(0x1, 10);
-scanner.push(0x2, 10_000_000);
+scanner.push(0x2, 300);
 
 // filters out address 0x2
-// because a 4-byte number cannot
-// carry 10,000,000
-scanner.filter_byte(4);
+// because a 1-byte number cannot
+// carry 300
+scanner.filter_byte(1);
 ```
 
 ## Custom filter
