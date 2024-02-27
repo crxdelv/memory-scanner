@@ -47,15 +47,15 @@ console.log(scanner.memory)
 }
 ```
 
-**CAUTION:** Do not modify the `memory` directly, please only use `push` or `patch` to prevent scanning error.
+**CAUTION:** Do not modify the `memory` directly, please use **push** or **patch** to prevent inaccuracies.
 
 ## Pushing an address
 
 To add an address, you need to call `push`.
 
 ```javascript
-scanner.push(address, value)
-// returns boolean
+scanner.push(Any: address, Number: value)
+// returns a boolean
 ```
 
 If an error occurred (such as the address cannot be added due to being blocked), it will return false.
@@ -67,7 +67,8 @@ If an error occurred (such as the address cannot be added due to being blocked),
 To modify a value by address, you need to call `patch`.
 
 ```javascript
-scanner.patch(address, value)
+scanner.patch(Any: address, Number: value)
+// returns a boolean
 ```
 
 If an error occurred (such as the address cannot be found), it will return false.
@@ -83,18 +84,20 @@ scanner.should_override = false
 
 ## Blocking
 
-If `should_block` is true, filtered out addresses are added to the blacklist (named `blocked`), which disallows them from being added (blocked on `push` and `patch`).
+If `should_block` is true, filtered out addresses are added to the blacklist (named `blocked`), which disallows them from being added.
 
 You can avoid this by using:
 ```javascript
 scanner.should_block = false
 ```
 
+Allowing this feature will trigger [`block_filtered()`](#manual-blocking) after the filter.
+
 ## Built-in filters
 
 ### Initial value
 ```javascript
-filter_init(value)
+filter_init(Any: value)
 ```
 
 This filters out data that does not match the given initial value.
@@ -144,7 +147,7 @@ scanner.filter_changed()
 
 ### Decreased value
 ```javascript
-filter_dec(by?)
+filter_dec(Number: by?)
 ```
 
 This filters out data that doesn't decrease its value.
@@ -164,7 +167,7 @@ scanner.filter_dec(5)
 
 ### Increased value
 ```javascript
-filter_inc(by?)
+filter_inc(Number: by?)
 ```
 
 This filters out data that doesn't increase its value.
@@ -247,7 +250,7 @@ scanner.filter_pos()
 
 ### Value a byte can carry
 ```javascript
-filter_byte(byte)
+filter_byte(Number: byte)
 ```
 
 This filters out data that exceeds the value that a given byte size can carry.
@@ -255,13 +258,13 @@ This filters out data that exceeds the value that a given byte size can carry.
 It is determined by the formula `256 ** byte < a`, where *a* is the latest value.
 
 ```javascript
-scanner.push(0x1, 10);
-scanner.push(0x2, 300);
+scanner.push(0x1, 10)
+scanner.push(0x2, 300)
 
 // filters out address 0x2
 // because a 1-byte number cannot
 // carry 300
-scanner.filter_byte(1);
+scanner.filter_byte(1)
 ```
 
 ## Custom filter
@@ -270,24 +273,26 @@ To set up a custom filter, define it with the property `rules`.
 
 ```javascript
 scanner.rules.even = (bef, aft) => {
-  return aft % 2 == 0;
+  return aft % 2 == 0
 }
 ```
 
 *__bef__ is the previous value, and __aft__ is the latest value.*
 
-After setting it up, you can use it with `filter_rule(name)`.
+After setting it up, you can use it with `filter_rule(String: name)`.
 
 ```javascript
-scanner.push(0x1, 2);
-scanner.push(0x2, 3);
+scanner.push(0x1, 2)
+scanner.push(0x2, 3)
 
 // filters out address 0x2
 // because its value is not an even number
-scanner.filter_rule("even");
+scanner.filter_rule("even")
 ```
 
 ## Manual blocking
-If you want to manually block filtered addresses, you can call `block_filtered`.
+If you want to manually block filtered addresses, you can call `block_filtered()`.
+
+Moreover, you also need to disable blocking in order to manually block addresses, due to automatic blocking after filtering, which can be prevented by `should_block = false`.
 
 This method will search for filtered out addresses and add them to the blacklist.
