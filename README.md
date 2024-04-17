@@ -47,7 +47,8 @@ console.log(scanner.memory)
 }
 ```
 
-**CAUTION:** Do not modify the `memory` directly, please use **push** or **patch** to prevent inaccuracies.
+> [!WARNING]
+> Do not modify the `memory` directly, please use **push** or **patch** to prevent inaccuracies.
 
 ## Pushing an address
 
@@ -60,7 +61,8 @@ scanner.push(Any: address, Number: value)
 
 If an error occurred (such as the address cannot be added due to being blocked), it will return false.
 
-**REMINDER:** Do not add addresses that have already been added.
+> [!IMPORTANT]
+> Do not add addresses that have already been added.
 
 ## Patching an address
 
@@ -172,7 +174,7 @@ filter_inc(Number: by?)
 
 This filters out data that doesn't increase its value.
 
-When the parameter `by` is defined, it is determined by the formula `b - by == a`, where *b* is the previous value and *a* is the latest value.
+When the parameter `by` is defined, it is determined by the formula `b + by == a`, where *b* is the previous value and *a* is the latest value.
 
 ```javascript
 scanner.push(0x1, 5)
