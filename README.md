@@ -128,7 +128,7 @@ scanner.filter_eq(5)
 filter_ineq(Number: value)
 ```
 
-This filters out data that match the given value.
+This filters out data that matches the given value.
 
 ```javascript
 scanner.push(0x1, 5)
