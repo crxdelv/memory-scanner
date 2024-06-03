@@ -119,11 +119,11 @@ class memoryscanner {
     if(this.should_block) this.block_filtered()
     return f
   }
-  filter_rule(k) {
+  filter_rule(k, args) {
     var r = this.rules[k]
     if(r == null) return false
     var f = this.memory.filter(i => {
-      return r(i.bef, i.aft) == true
+      return r(i.bef, i.aft, args) == true
     })
     if(this.should_override) this.memory = f
     if(this.should_block) this.block_filtered()
