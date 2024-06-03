@@ -1,5 +1,5 @@
 class memoryscanner {
-  version = 1
+  version = 2
   memory = []
   blocked = []
   rules = {}
