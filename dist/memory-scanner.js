@@ -102,9 +102,17 @@ class memoryscanner {
     if(this.should_block) this.block_filtered()
     return f
   }
-  filter_init(v) {
+  filter_eq(v) {
     var f = this.memory.filter(i => {
       return i.aft == v
+    })
+    if(this.should_override) this.memory = f
+    if(this.should_block) this.block_filtered()
+    return f
+  }
+  filter_noteq(v) {
+    var f = this.memory.filter(i => {
+      return i.aft != v
     })
     if(this.should_override) this.memory = f
     if(this.should_block) this.block_filtered()
