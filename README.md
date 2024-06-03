@@ -102,7 +102,17 @@ Allowing this feature will trigger [`block_filtered()`](#manual-blocking) after 
 filter_init(Any: value)
 ```
 
-This filters out data that does not match the given initial value.
+This filters out data that does not match the intial value.
+
+> [!WARNING]
+> This method is deprecated and will be removed soon. Use `filter_eq` instead.
+
+### Equal value
+```javascript
+filter_eq(Any: value)
+```
+
+This filters out data that does not match the given value.
 
 ```javascript
 scanner.push(0x1, 5)
@@ -110,7 +120,23 @@ scanner.push(0x2, 10)
 
 // filters out address 0x2
 // because its value is not 5
-scanner.filter_init(5)
+scanner.filter_eq(5)
+```
+
+### Inequal value
+```javascript
+filter_ineq(Any: value)
+```
+
+This filters out data that match the given value.
+
+```javascript
+scanner.push(0x1, 5)
+scanner.push(0x2, 10)
+
+// filters out address 0x1
+// because its value is 5
+scanner.filter_ineq(5)
 ```
 
 ### Unchanged value
