@@ -300,7 +300,7 @@ scanner.filter_byte(1)
 To set up a custom filter, define it with the property `rules`.
 
 ```javascript
-scanner.rules.even = (bef, aft) => {
+scanner.rules.even = (bef, aft, args) => {
   return aft % 2 == 0
 }
 ```
@@ -315,7 +315,7 @@ scanner.push(0x2, 3)
 
 // filters out address 0x2
 // because its value is not an even number
-scanner.filter_rule("even")
+scanner.filter_rule("even", [])
 ```
 
 ## Manual blocking
