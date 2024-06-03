@@ -110,6 +110,7 @@ class memoryscanner {
     if(this.should_block) this.block_filtered()
     return f
   }
+  filter_init = this.filter_eq
   filter_noteq(v) {
     var f = this.memory.filter(i => {
       return i.aft != v
