@@ -111,7 +111,7 @@ class memoryscanner {
     return f
   }
   filter_init = this.filter_eq
-  filter_noteq(v) {
+  filter_ineq(v) {
     var f = this.memory.filter(i => {
       return i.aft != v
     })
