@@ -109,7 +109,7 @@ This filters out data that does not match the intial value.
 
 ### Equal value
 ```javascript
-filter_eq(Any: value)
+filter_eq(Number: value)
 ```
 
 This filters out data that does not match the given value.
@@ -125,7 +125,7 @@ scanner.filter_eq(5)
 
 ### Inequal value
 ```javascript
-filter_ineq(Any: value)
+filter_ineq(Number: value)
 ```
 
 This filters out data that match the given value.
