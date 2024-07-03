@@ -1,4 +1,4 @@
-class memoryscanner {
+class MemoryScanner {
   version = 2
   memory = []
   blocked = []
