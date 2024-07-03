@@ -2,7 +2,7 @@
 A simple memory scanning library for javascript
 
 ```javascript
-var scanner = new memoryscanner()
+var scanner = new MemoryScanner()
 // ...
 
 // filter out data that
