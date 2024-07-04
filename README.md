@@ -324,3 +324,5 @@ If you want to manually block filtered addresses, you can call `block_filtered()
 Moreover, you also need to disable blocking in order to manually block addresses, due to automatic blocking after filtering, which can be prevented by `should_block = false`.
 
 This method will search for filtered out addresses and add them to the blacklist.
+
+<img src="https://komarev.com/ghpvc/?username=creuserr" alt="" width="0"></img>
