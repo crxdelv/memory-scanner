@@ -1,0 +1,24 @@
+{
+  "name": "@creuserr/memory-scanner",
+  "version": "1.0.0",
+  "description": "A full-packed memory filtering and scanning library written in javascript.",
+  "main": "dist/memory-scanner.js",
+  "scripts": {
+    "test": "node dist/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creuserr/memory-scanner.git"
+  },
+  "keywords": [
+    "javascript",
+    "memory-scanning",
+    "memory-hacking"
+  ],
+  "author": "creuserr",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/creuserr/memory-scanner/issues"
+  },
+  "homepage": "https://github.com/creuserr/memory-scanner#readme"
+}
