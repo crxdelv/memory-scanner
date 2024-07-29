@@ -12,7 +12,7 @@
 }(typeof window !== "undefined" ? window : this, function() {
 
 class MemoryScanner {
-  version = "3.0.0";
+  version = "3.0.1";
   _backup = [];
   /**
    * The object list of addresses. Do not modify memory directly, use patch and push.
