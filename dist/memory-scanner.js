@@ -1,3 +1,13 @@
+/**
+ * Hashwork v1.0.3
+ * https://github.com/creuserr/memory-scanner
+ *
+ * Released under the CC0-1.0 license
+ * https://github.com/creuserr/memory-scanner#license
+ *
+ * Date: 2024-07-29
+ */
+
 (function (global, factory) {
   if(typeof module === "object" && typeof module.exports === "object") {
     // For Node.js or CommonJS
