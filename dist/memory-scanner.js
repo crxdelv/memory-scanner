@@ -1,5 +1,5 @@
 /**
- * Hashwork v1.0.3
+ * Hashwork v3.0.1
  * https://github.com/creuserr/memory-scanner
  *
  * Released under the CC0-1.0 license
